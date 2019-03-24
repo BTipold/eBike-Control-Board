@@ -1,5 +1,7 @@
 #pragma once
 
+#include "NumDisplay.h"
+
 // PINS
 #define SHIFT_IN			2
 #define LATCH				3
@@ -21,6 +23,7 @@
 #define SIGNAL_LIGHT_TIME 750
 
 // MACROS
-#define HEADLIGHT_BRIGHTNESS (100 + digitalRead(HIGHBEAMS) * 155) * digitalRead(LIGHTS)
-#define BRAKELIGHT_BRIGHTNESS digitalRead(BRAKES) * 255
-const float SPEED_FACTOR = (PI / 2 * RADIUS * 0.0000254) / (0.000000278);
+#define HEADLIGHT_BRIGHTNESS (100 + !digitalRead(HIGHBEAMS) * 155) * !digitalRead(LIGHTS)
+#define BRAKELIGHT_BRIGHTNESS !digitalRead(BRAKES) * 255
+
+const float SPEED_FACTOR = (3.1415 / 2 * RADIUS * 0.0000254) / (0.000000278);
