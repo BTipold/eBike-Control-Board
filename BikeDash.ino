@@ -8,9 +8,6 @@
 #include "NumDisplay.h"
 #include "eBike.h"
 
-void start_up(void);
-void init_io_registers(void);
-
 // VARIABLES
 unsigned long int time;
 unsigned long int last_time_wheel_speed = 0;
@@ -22,13 +19,14 @@ unsigned int speed = 0;
 bool last_wheel_sensor_state = false;
 bool wheel_sensor_state = false;
 bool signal_light_state = false;
+void init_io_registers(void);
 
 // SETUP
 void setup() {
+	// Setup will run once.
 	init_io_registers();
 	start_up();
 }
-
 
 // LOOP
 void loop() {
@@ -79,29 +77,9 @@ void loop() {
 	}
 }
 
-
-void start_up(void) {
-  for(int k(0); k < 4; k++){
-  for (int i(0); i < 8; ++i) {
-    digitalWrite(LATCH, LOW);
-    for (int j(0); j < 8; ++j) {
-      digitalWrite(CLOCK, LOW);
-      digitalWrite(SHIFT_IN, init_sequence[i][j]);
-      digitalWrite(CLOCK, HIGH);
-    }
-    for (int j(0); j < 8; ++j) {
-      digitalWrite(CLOCK, LOW);
-      digitalWrite(SHIFT_IN, init_sequence[i][j]);
-      digitalWrite(CLOCK, HIGH);
-    }
-    delay(100);
-    digitalWrite(LATCH, HIGH);
-  }
-}
-}
-
 void init_io_registers(void) {
-  DDRD = B01111111;
-  DDRB = B00001100;
-  DDRC = B00000000;
+	// Initialize input/output registers.
+	DDRD = B01111111;
+	DDRB = B00001100;
+	DDRC = B00000000;
 }
