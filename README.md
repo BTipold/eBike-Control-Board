@@ -10,7 +10,7 @@ This board will allow me to control:
   - Speedometer
   
 This works with the custom PCB I ordered.
-![PCB 3D](https://github.com/BTipold/eBike-Control-Board/blob/master/eBike_PCB.png)
-![PCB 2D](https://github.com/BTipold/eBike-Control-Board/blob/master/eBike_PCB_2.png)
 ![Schematic](https://github.com/BTipold/eBike-Control-Board/blob/master/eBike_Schematic.png)
+![PCB 2D](https://github.com/BTipold/eBike-Control-Board/blob/master/eBike_PCB_2.png)
+![PCB 3D](https://github.com/BTipold/eBike-Control-Board/blob/master/eBike_PCB.png)
 ![PCB Photo](https://github.com/BTipold/eBike-Control-Board/blob/master/eBike_PCB_3.jpg)
